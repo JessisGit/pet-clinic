@@ -26,3 +26,5 @@ jobs:
           # hier ist Platz für maven package und docker build
            mvn package
            docker build --tag jessisdocker/petclinic/pet-clinic:latest -f Dockerfile .
+           echo ${{ secrets.password }} | docker login -u 'jessisdocker' --password-stdin
+           docker push jessisdocker/petclinic/pet-clinic:latest
