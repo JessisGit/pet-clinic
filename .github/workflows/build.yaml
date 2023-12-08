@@ -27,4 +27,4 @@ jobs:
            mvn package
            docker build --tag jessisdocker/petclinic/pet-clinic:latest -f Dockerfile .
            echo ${{ secrets.password }} | docker login -u 'jessisdocker' --password-stdin
-           docker push jessisdocker/petclinic/pet-clinic:latest
+           docker push jessisdocker/petclinic:latest
